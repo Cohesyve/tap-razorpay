@@ -1,111 +1,325 @@
 {
-    "streams": [
-      {
-        "tap_stream_id": "orders",
-        "key_properties": ["id"],
-        "schema": {
-          "properties": {
-            "id": {"type": "string"},
-            "amount": {"type": "integer"},
-            "currency": {"type": "string"},
-            "status": {"type": "string"},
-            "created_at": {"type": "integer"}
+  "streams": [
+    {
+      "tap_stream_id": "orders",
+      "schema": {
+        "properties": {
+          "id": {
+            "type": "string"
           },
-          "type": "object"
-        }
+          "amount": {
+            "type": "integer"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
       },
-      {
-        "tap_stream_id": "customers",
-        "key_properties": ["id"],
-        "schema": {
-          "properties": {
-            "id": {"type": "string"},
-            "name": {"type": "string"},
-            "email": {"type": "string"},
-            "contact": {"type": "string"},
-            "created_at": {"type": "integer"}
-          },
-          "type": "object"
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "selected": true,
+            "table-key-properties": [
+              "id"
+            ],
+            "valid-replication-keys": [
+              "created_at"
+            ],
+            "replication-method": "INCREMENTAL"
+          }
         }
+      ],
+      "key_properties": [
+        "id"
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "tap_stream_id": "customers",
+      "schema": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "contact": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
       },
-      {
-        "tap_stream_id": "payments",
-        "key_properties": ["id"],
-        "schema": {
-          "properties": {
-            "id": {"type": "string"},
-            "amount": {"type": "integer"},
-            "currency": {"type": "string"},
-            "status": {"type": "string"},
-            "order_id": {"type": "string"},
-            "method": {"type": "string"},
-            "created_at": {"type": "integer"}
-          },
-          "type": "object"
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "selected": true,
+            "table-key-properties": [
+              "id"
+            ],
+            "valid-replication-keys": [
+              "created_at"
+            ],
+            "replication-method": "INCREMENTAL"
+          }
         }
+      ],
+      "key_properties": [
+        "id"
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "tap_stream_id": "payments",
+      "schema": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "order_id": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
       },
-      {
-        "tap_stream_id": "settlements",
-        "key_properties": ["id"],
-        "schema": {
-          "properties": {
-            "id": {"type": "string"},
-            "amount": {"type": "integer"},
-            "status": {"type": "string"},
-            "fees": {"type": "integer"},
-            "tax": {"type": "integer"},
-            "utr": {"type": "string"},
-            "created_at": {"type": "integer"}
-          },
-          "type": "object"
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "selected": true,
+            "table-key-properties": [
+              "id"
+            ],
+            "valid-replication-keys": [
+              "created_at"
+            ],
+            "replication-method": "INCREMENTAL"
+          }
         }
+      ],
+      "key_properties": [
+        "id"
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "tap_stream_id": "settlements",
+      "schema": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          },
+          "fees": {
+            "type": "integer"
+          },
+          "tax": {
+            "type": "integer"
+          },
+          "utr": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
       },
-      {
-        "tap_stream_id": "refunds",
-        "key_properties": ["id"],
-        "schema": {
-          "properties": {
-            "id": {"type": "string"},
-            "payment_id": {"type": "string"},
-            "amount": {"type": "integer"},
-            "status": {"type": "string"},
-            "speed_processed": {"type": "string"},
-            "created_at": {"type": "integer"}
-          },
-          "type": "object"
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "selected": true,
+            "table-key-properties": [
+              "id"
+            ],
+            "valid-replication-keys": [
+              "created_at"
+            ],
+            "replication-method": "INCREMENTAL"
+          }
         }
+      ],
+      "key_properties": [
+        "id"
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "tap_stream_id": "refunds",
+      "schema": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "payment_id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          },
+          "speed_processed": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
       },
-      {
-        "tap_stream_id": "disputes",
-        "key_properties": ["id"],
-        "schema": {
-          "properties": {
-            "id": {"type": "string"},
-            "payment_id": {"type": "string"},
-            "amount": {"type": "integer"},
-            "currency": {"type": "string"},
-            "status": {"type": "string"},
-            "reason": {"type": "string"},
-            "created_at": {"type": "integer"}
-          },
-          "type": "object"
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "selected": true,
+            "table-key-properties": [
+              "id"
+            ],
+            "valid-replication-keys": [
+              "created_at"
+            ],
+            "replication-method": "INCREMENTAL"
+          }
         }
+      ],
+      "key_properties": [
+        "id"
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "tap_stream_id": "disputes",
+      "schema": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "payment_id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
       },
-      {
-        "tap_stream_id": "items",
-        "key_properties": ["id"],
-        "schema": {
-          "properties": {
-            "id": {"type": "string"},
-            "name": {"type": "string"},
-            "description": {"type": "string"},
-            "amount": {"type": "integer"},
-            "currency": {"type": "string"},
-            "active": {"type": "boolean"},
-            "created_at": {"type": "integer"}
-          },
-          "type": "object"
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "selected": true,
+            "table-key-properties": [
+              "id"
+            ],
+            "valid-replication-keys": [
+              "created_at"
+            ],
+            "replication-method": "INCREMENTAL"
+          }
         }
-      }
-    ]
-  }
+      ],
+      "key_properties": [
+        "id"
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "tap_stream_id": "items",
+      "schema": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "created_at": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "selected": true,
+            "table-key-properties": [
+              "id"
+            ],
+            "valid-replication-keys": [
+              "created_at"
+            ],
+            "replication-method": "INCREMENTAL"
+          }
+        }
+      ],
+      "key_properties": [
+        "id"
+      ],
+      "replication_method": "INCREMENTAL"
+    }
+  ]
+}

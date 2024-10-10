@@ -1,0 +1,10 @@
+{
+    "properties": {
+      "id": {"type": "string"},
+      "amount": {"type": "integer"},
+      "currency": {"type": "string"},
+      "status": {"type": "string"},
+      "created_at": {"type": "integer"}
+    },
+    "type": "object"
+  }

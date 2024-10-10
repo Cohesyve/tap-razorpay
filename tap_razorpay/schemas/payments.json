@@ -1,0 +1,12 @@
+{
+    "properties": {
+      "id": {"type": "string"},
+      "amount": {"type": "integer"},
+      "currency": {"type": "string"},
+      "status": {"type": "string"},
+      "order_id": {"type": "string"},
+      "method": {"type": "string"},
+      "created_at": {"type": "integer"}
+    },
+    "type": "object"
+  }

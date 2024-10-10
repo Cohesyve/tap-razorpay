@@ -1,1 +1,14 @@
+*.pyc
+*.pyo
+*.swp
+*.swo
+*.~
+.DS_Store
+.vscode/
+.idea/
+__pycache__/
+*.egg-info/
+dist/
+build/
+venv/
 config.json
