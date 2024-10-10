@@ -13,8 +13,8 @@ class RazorpayClient:
         self.client_secret = config['client_secret']
         self.refresh_token = config.get('refresh_token')
         self.config_path = os.path.join(os.path.dirname(__file__), '../config.json')
-        self.access_token = None
-        self.expires_at = None
+        self.access_token = config.get('access_token')
+        self.expires_at = config.get('expires_at')
 
     @backoff.on_exception(backoff.expo, requests.exceptions.RequestException, max_tries=5)
     def _make_request(self, method, endpoint, params=None, data=None):
@@ -32,7 +32,7 @@ class RazorpayClient:
         }
 
     def _ensure_access_token(self):
-        if not self.access_token and time.time() >= self.expires_at:
+        if not self.access_token or time.time() >= self.expires_at:
             self._refresh_access_token()
 
     def _refresh_access_token(self):
@@ -58,6 +58,8 @@ class RazorpayClient:
                 config = json.load(config_file)
             
             config['refresh_token'] = self.refresh_token
+            config['access_token'] = self.access_token
+            config['expires_at'] = self.expires_at
 
             with open(self.config_path, 'w') as config_file:
                 json.dump(config, config_file, indent=2)
