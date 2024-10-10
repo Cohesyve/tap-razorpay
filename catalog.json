@@ -1,0 +1,111 @@
+{
+    "streams": [
+      {
+        "tap_stream_id": "orders",
+        "key_properties": ["id"],
+        "schema": {
+          "properties": {
+            "id": {"type": "string"},
+            "amount": {"type": "integer"},
+            "currency": {"type": "string"},
+            "status": {"type": "string"},
+            "created_at": {"type": "integer"}
+          },
+          "type": "object"
+        }
+      },
+      {
+        "tap_stream_id": "customers",
+        "key_properties": ["id"],
+        "schema": {
+          "properties": {
+            "id": {"type": "string"},
+            "name": {"type": "string"},
+            "email": {"type": "string"},
+            "contact": {"type": "string"},
+            "created_at": {"type": "integer"}
+          },
+          "type": "object"
+        }
+      },
+      {
+        "tap_stream_id": "payments",
+        "key_properties": ["id"],
+        "schema": {
+          "properties": {
+            "id": {"type": "string"},
+            "amount": {"type": "integer"},
+            "currency": {"type": "string"},
+            "status": {"type": "string"},
+            "order_id": {"type": "string"},
+            "method": {"type": "string"},
+            "created_at": {"type": "integer"}
+          },
+          "type": "object"
+        }
+      },
+      {
+        "tap_stream_id": "settlements",
+        "key_properties": ["id"],
+        "schema": {
+          "properties": {
+            "id": {"type": "string"},
+            "amount": {"type": "integer"},
+            "status": {"type": "string"},
+            "fees": {"type": "integer"},
+            "tax": {"type": "integer"},
+            "utr": {"type": "string"},
+            "created_at": {"type": "integer"}
+          },
+          "type": "object"
+        }
+      },
+      {
+        "tap_stream_id": "refunds",
+        "key_properties": ["id"],
+        "schema": {
+          "properties": {
+            "id": {"type": "string"},
+            "payment_id": {"type": "string"},
+            "amount": {"type": "integer"},
+            "status": {"type": "string"},
+            "speed_processed": {"type": "string"},
+            "created_at": {"type": "integer"}
+          },
+          "type": "object"
+        }
+      },
+      {
+        "tap_stream_id": "disputes",
+        "key_properties": ["id"],
+        "schema": {
+          "properties": {
+            "id": {"type": "string"},
+            "payment_id": {"type": "string"},
+            "amount": {"type": "integer"},
+            "currency": {"type": "string"},
+            "status": {"type": "string"},
+            "reason": {"type": "string"},
+            "created_at": {"type": "integer"}
+          },
+          "type": "object"
+        }
+      },
+      {
+        "tap_stream_id": "items",
+        "key_properties": ["id"],
+        "schema": {
+          "properties": {
+            "id": {"type": "string"},
+            "name": {"type": "string"},
+            "description": {"type": "string"},
+            "amount": {"type": "integer"},
+            "currency": {"type": "string"},
+            "active": {"type": "boolean"},
+            "created_at": {"type": "integer"}
+          },
+          "type": "object"
+        }
+      }
+    ]
+  }
