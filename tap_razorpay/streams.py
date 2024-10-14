@@ -33,7 +33,7 @@ class Stream:
         transformed_item = {}
         for key, schema_property in stream_schema['properties'].items():
             value = item.get(key)
-            expected_types = schema_property.get('type', [])
+            expected_types = schema_property.get('type', ['null'])
             if not isinstance(expected_types, list):
                 expected_types = [expected_types]
 
