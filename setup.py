@@ -4,7 +4,7 @@ setup(
     name='tap-razorpay',
     version='0.1.0',
     description='Singer.io tap for extracting data from the Razorpay API',
-    author='Hotglue',
+    author='Cohesyve',
     url='https://github.com/Cohesyve/tap-razorpay',
     classifiers=['Programming Language :: Python :: 3 :: Only'],
     py_modules=['tap_razorpay'],
@@ -17,9 +17,9 @@ setup(
         [console_scripts]
         tap-razorpay=tap_razorpay:main
     ''',
-    packages=find_packages(),
+    packages=["tap-razorpay"],
     package_data={
-        'tap_razorpay': ['schemas/*.json']
+        'schemas': ['tap_razorpay/schemas/*.json']
     },
     include_package_data=True,
 )
