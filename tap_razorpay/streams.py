@@ -3,6 +3,7 @@ from singer import metadata
 from singer.bookmarks import get_bookmark
 import json
 from pathlib import Path
+import pkg_resources
 
 LOGGER = singer.get_logger()
 
@@ -18,7 +19,7 @@ class Stream:
 
     @classmethod
     def get_schema(cls):
-        schema_path = Path(__file__).parent / "schemas" / f"{cls.tap_stream_id}.json"
+        schema_path = pkg_resources.resource_filename('tap_razorpay', f"schemas/{cls.tap_stream_id}.json")
         with open(schema_path, "r") as f:
             return json.load(f)
 
