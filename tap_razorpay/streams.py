@@ -37,15 +37,10 @@ class Stream:
             if not isinstance(expected_types, list):
                 expected_types = [expected_types]
 
-            expected_types.extend(['null', 'NoneType'])  # Allow null values and NoneType
-
-            LOGGER.info(f"Expected types: {expected_types}")
-            LOGGER.info(f"Value: {value}")
-            LOGGER.info(f"Value Type: {type(value)}")
-
-            if value is None and ('null' in expected_types or 'NoneType' in expected_types):
+            if value is None:
                 transformed_item[key] = None
-            elif value is not None:
+            else:
+            # elif value is not None:
                 if 'string' in expected_types:
                     transformed_item[key] = str(value)
                 elif 'integer' in expected_types:
@@ -64,9 +59,9 @@ class Stream:
                     transformed_item[key] = bool(value)
                 else:
                     transformed_item[key] = value
-            else:
-                LOGGER.warning(f"Unexpected null value for {key}. Schema doesn't allow null.")
-                transformed_item[key] = None
+            # else:
+            #     LOGGER.warning(f"Unexpected null value for {key}. Schema doesn't allow null.")
+            #     transformed_item[key] = None
 
         return transformed_item
 
