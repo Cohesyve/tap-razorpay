@@ -16,6 +16,7 @@ def discover():
     streams = []
     for stream_name, schema in raw_schemas.items():
         stream = {
+            'stream': stream_name,
             'tap_stream_id': stream_name,
             'schema': schema,
             'metadata': [
@@ -30,6 +31,7 @@ def discover():
                 }
             ],
             'key_properties': STREAMS[stream_name].key_properties,
+            'replication_key': STREAMS[stream_name].replication_key,
             'replication_method': STREAMS[stream_name].replication_method,
         }
         streams.append(stream)
