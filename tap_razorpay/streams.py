@@ -37,13 +37,13 @@ class Stream:
             if not isinstance(expected_types, list):
                 expected_types = [expected_types]
 
-            expected_types.append('null')
+            expected_types.extend(['null', 'NoneType'])  # Allow null values and NoneType
 
             LOGGER.info(f"Expected types: {expected_types}")
             LOGGER.info(f"Value: {value}")
             LOGGER.info(f"Value Type: {type(value)}")
 
-            if value is None and 'null' in expected_types:
+            if value is None and ('null' in expected_types or 'NoneType' in expected_types):
                 transformed_item[key] = None
             elif value is not None:
                 if 'string' in expected_types:
