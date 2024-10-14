@@ -17,7 +17,7 @@ setup(
         [console_scripts]
         tap-razorpay=tap_razorpay:main
     ''',
-    packages=["tap-razorpay"],
+    packages=find_packages(),
     package_data={
         'schemas': ['tap_razorpay/schemas/*.json']
     },
