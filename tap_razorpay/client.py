@@ -32,7 +32,7 @@ class RazorpayClient:
         }
 
     def _ensure_access_token(self):
-        if not self.access_token or time.time() >= self.expires_at:
+        if not self.access_token or not self.expires_at or time.time() >= self.expires_at:
             self._refresh_access_token()
 
     def _refresh_access_token(self):
