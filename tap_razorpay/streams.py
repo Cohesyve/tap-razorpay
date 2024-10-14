@@ -33,10 +33,14 @@ class Stream:
         transformed_item = {}
         for key, schema_property in stream_schema['properties'].items():
             value = item.get(key)
-            expected_types = schema_property.get('type', ['null'])
+            expected_types = schema_property.get('type', [])
             if not isinstance(expected_types, list):
                 expected_types = [expected_types]
 
+            # Handle null values by adding it to the expected types
+            if value is None and 'null' not in expected_types:
+                expected_types.append('null')
+                
             if value is None and 'null' in expected_types:
                 transformed_item[key] = None
             elif value is not None:
