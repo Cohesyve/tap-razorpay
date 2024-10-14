@@ -39,8 +39,9 @@ class Stream:
 
             expected_types.append('null')
 
-            print(f"Expected types: {expected_types}")
-            print(f"Value: {value}")
+            LOGGER.info(f"Expected types: {expected_types}")
+            LOGGER.info(f"Value: {value}")
+            LOGGER.info(f"Value Type: {type(value)}")
 
             if value is None and 'null' in expected_types:
                 transformed_item[key] = None
