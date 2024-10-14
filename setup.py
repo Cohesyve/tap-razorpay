@@ -19,7 +19,10 @@ setup(
     ''',
     packages=find_packages(),
     package_data={
-        'tap_razorpay': ['schemas/*.json']
+        'schemas': ['tap_razorpay/schemas/*.json']
     },
     include_package_data=True,
 )
+
+#P7Kjs0gucFkB2g
+#60cXoXI69DbpbeqKl4zF8dqY
