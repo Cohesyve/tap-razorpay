@@ -25,7 +25,7 @@ class RazorpayClient:
         return response.json()
 
     def _get_headers(self):
-        self._ensure_access_token()
+        # self._ensure_access_token()
         return {
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json"
