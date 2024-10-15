@@ -4,6 +4,9 @@ import backoff
 import time
 import json
 import os
+import singer
+
+LOGGER = singer.get_logger()
 
 class RazorpayClient:
     BASE_URL = "https://api.razorpay.com/v1"
@@ -50,7 +53,7 @@ class RazorpayClient:
         self.expires_at = time.time() + token_data["expires_in"]
         
         # Update the config file with the new refresh token
-        self._update_config()
+        # self._update_config()
 
     def _update_config(self):
         if self.config:
@@ -63,7 +66,7 @@ class RazorpayClient:
 
             self.config = updated_config
         else:
-            print("Config file path not provided or file not found. Unable to update refresh token.")
+            LOGGER.error("Config file path not provided or file not found. Unable to update refresh token.")
 
     def get(self, endpoint, params=None):
         return self._make_request("GET", endpoint, params=params)
