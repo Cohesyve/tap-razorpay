@@ -31,7 +31,6 @@ def discover():
                 }
             ],
             'key_properties': STREAMS[stream_name].key_properties,
-            'replication_key': STREAMS[stream_name].replication_key,
             'replication_method': STREAMS[stream_name].replication_method,
         }
         streams.append(stream)
