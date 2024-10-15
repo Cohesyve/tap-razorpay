@@ -1,23 +1,39 @@
 {
   "streams": [
     {
+      "stream": "orders",
       "tap_stream_id": "orders",
       "schema": {
         "properties": {
           "id": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "amount": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "currency": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "status": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "created_at": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           }
         },
         "type": "object"
@@ -40,26 +56,43 @@
       "key_properties": [
         "id"
       ],
+      "replication_key": "created_at",
       "replication_method": "INCREMENTAL"
     },
     {
+      "stream": "customers",
       "tap_stream_id": "customers",
       "schema": {
         "properties": {
           "id": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "name": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "email": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "contact": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "created_at": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           }
         },
         "type": "object"
@@ -82,32 +115,55 @@
       "key_properties": [
         "id"
       ],
+      "replication_key": "created_at",
       "replication_method": "INCREMENTAL"
     },
     {
+      "stream": "payments",
       "tap_stream_id": "payments",
       "schema": {
         "properties": {
           "id": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "amount": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "currency": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "status": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "order_id": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "method": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "created_at": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           }
         },
         "type": "object"
@@ -130,32 +186,55 @@
       "key_properties": [
         "id"
       ],
+      "replication_key": "created_at",
       "replication_method": "INCREMENTAL"
     },
     {
+      "stream": "settlements",
       "tap_stream_id": "settlements",
       "schema": {
         "properties": {
           "id": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "amount": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "status": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "fees": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "tax": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "utr": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "created_at": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           }
         },
         "type": "object"
@@ -178,29 +257,49 @@
       "key_properties": [
         "id"
       ],
+      "replication_key": "created_at",
       "replication_method": "INCREMENTAL"
     },
     {
+      "stream": "refunds",
       "tap_stream_id": "refunds",
       "schema": {
         "properties": {
           "id": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "payment_id": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "amount": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "status": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "speed_processed": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "created_at": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           }
         },
         "type": "object"
@@ -223,32 +322,55 @@
       "key_properties": [
         "id"
       ],
+      "replication_key": "created_at",
       "replication_method": "INCREMENTAL"
     },
     {
+      "stream": "disputes",
       "tap_stream_id": "disputes",
       "schema": {
         "properties": {
           "id": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "payment_id": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "amount": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "currency": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "status": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "reason": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "created_at": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           }
         },
         "type": "object"
@@ -271,32 +393,52 @@
       "key_properties": [
         "id"
       ],
+      "replication_key": "created_at",
       "replication_method": "INCREMENTAL"
     },
     {
+      "stream": "items",
       "tap_stream_id": "items",
       "schema": {
         "properties": {
           "id": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "name": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "description": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "amount": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           },
           "currency": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "active": {
             "type": "boolean"
           },
           "created_at": {
-            "type": "integer"
+            "type": [
+              "integer",
+              "null"
+            ]
           }
         },
         "type": "object"
@@ -319,6 +461,7 @@
       "key_properties": [
         "id"
       ],
+      "replication_key": "created_at",
       "replication_method": "INCREMENTAL"
     }
   ]
