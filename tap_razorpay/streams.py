@@ -37,8 +37,6 @@ class Stream:
             if not isinstance(expected_types, list):
                 expected_types = [expected_types]
 
-            expected_types.append('null')
-
             if value is None and 'null' in expected_types:
                 transformed_item[key] = None
             elif value is not None:

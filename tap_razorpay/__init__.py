@@ -44,7 +44,7 @@ def main():
 
     if args.discover:
         catalog = discover()
-        # LOGGER.info(json.dumps(catalog, indent=2))
+        LOGGER.info(json.dumps(catalog, indent=2))
     else:
         if args.catalog:
             catalog = args.catalog

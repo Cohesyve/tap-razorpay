@@ -1,12 +1,12 @@
 {
     "properties": {
-      "id": {"type": "string"},
-      "payment_id": {"type": "string"},
-      "amount": {"type": "integer"},
-      "currency": {"type": "string"},
-      "status": {"type": "string"},
-      "reason": {"type": "string"},
-      "created_at": {"type": "integer"}
+      "id": {"type": ["string", "null"]},
+      "payment_id": {"type": ["string", "null"]},
+      "amount": {"type": ["integer", "null"]},
+      "currency": {"type": ["string", "null"]},
+      "status": {"type": ["string", "null"]},
+      "reason": {"type": ["string", "null"]},
+      "created_at": {"type": ["integer", "null"]}
     },
     "type": "object"
   }

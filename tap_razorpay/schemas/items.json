@@ -1,12 +1,12 @@
 {
     "properties": {
-      "id": {"type": "string"},
-      "name": {"type": "string"},
-      "description": {"type": "string"},
-      "amount": {"type": "integer"},
-      "currency": {"type": "string"},
-      "active": {"type": "boolean"},
-      "created_at": {"type": "integer"}
+      "id": {"type": ["string", "null"]},
+      "name": {"type": ["string", "null"]},
+      "description": {"type": ["string", "null"]},
+      "amount": {"type": ["integer", "null"]},
+      "currency": {"type": ["string", "null"]},
+      "active": {"type": ["boolean"]},
+      "created_at": {"type": ["integer", "null"]}
     },
     "type": "object"
   }
