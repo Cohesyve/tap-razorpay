@@ -12,7 +12,7 @@ class RazorpayClient:
         self.client_id = config['client_id']
         self.client_secret = config['client_secret']
         self.refresh_token = config.get('refresh_token')
-        self.config_path = os.path.join(os.path.dirname(__file__), '../config.json')
+        self.config = {}
         self.access_token = config.get('access_token')
         self.expires_at = config.get('expires_at')
 
@@ -50,19 +50,18 @@ class RazorpayClient:
         self.expires_at = time.time() + token_data["expires_in"]
         
         # Update the config file with the new refresh token
-        self._update_config_file()
+        self._update_config()
 
-    def _update_config_file(self):
-        if self.config_path and os.path.exists(self.config_path):
-            with open(self.config_path, 'r') as config_file:
-                config = json.load(config_file)
+    def _update_config(self):
+        if self.config:
+
+            updated_config = self.config.copy()
             
-            config['refresh_token'] = self.refresh_token
-            config['access_token'] = self.access_token
-            config['expires_at'] = self.expires_at
+            updated_config['refresh_token'] = self.refresh_token
+            updated_config['access_token'] = self.access_token
+            updated_config['expires_at'] = self.expires_at
 
-            with open(self.config_path, 'w') as config_file:
-                json.dump(config, config_file, indent=2)
+            self.config = updated_config
         else:
             print("Config file path not provided or file not found. Unable to update refresh token.")
 
