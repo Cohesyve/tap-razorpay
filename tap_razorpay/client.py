@@ -50,7 +50,7 @@ class RazorpayClient:
         self.expires_at = time.time() + token_data["expires_in"]
         
         # Update the config file with the new refresh token
-        self._update_config()
+        # self._update_config()
 
     def _update_config(self):
         if self.config:
