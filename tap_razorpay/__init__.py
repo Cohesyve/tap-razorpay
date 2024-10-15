@@ -5,6 +5,7 @@ from .client import RazorpayClient
 from .streams import STREAMS
 import json
 
+LOGGER = singer.get_logger()
 REQUIRED_CONFIG_KEYS = ["client_id", "client_secret", "refresh_token"]
 
 def discover():
@@ -43,7 +44,7 @@ def main():
 
     if args.discover:
         catalog = discover()
-        print(json.dumps(catalog, indent=2))
+        LOGGER.info(json.dumps(catalog, indent=2))
     else:
         if args.catalog:
             catalog = args.catalog
