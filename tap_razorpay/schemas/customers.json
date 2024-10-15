@@ -1,10 +1,10 @@
 {
     "properties": {
-      "id": {"type": "string"},
-      "name": {"type": "string"},
-      "email": {"type": "string"},
-      "contact": {"type": "string"},
-      "created_at": {"type": "integer"}
+      "id": {"type": ["string", "null"]},
+      "name": {"type": ["string", "null"]},
+      "email": {"type": ["string", "null"]},
+      "contact": {"type": ["string", "null"]},
+      "created_at": {"type": ["integer", "null"]}
     },
     "type": "object"
   }

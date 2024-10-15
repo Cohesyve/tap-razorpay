@@ -1,12 +1,12 @@
 {
     "properties": {
-      "id": {"type": "string"},
-      "amount": {"type": "integer"},
-      "status": {"type": "string"},
-      "fees": {"type": "integer"},
-      "tax": {"type": "integer"},
-      "utr": {"type": "string"},
-      "created_at": {"type": "integer"}
+      "id": {"type": ["string", "null"]},
+      "amount": {"type": ["integer", "null"]},
+      "status": {"type": ["string", "null"]},
+      "fees": {"type": ["integer", "null"]},
+      "tax": {"type": ["integer", "null"]},
+      "utr": {"type": ["string", "null"]},
+      "created_at": {"type": ["integer", "null"]}
     },
     "type": "object"
   }
