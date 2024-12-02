@@ -56,6 +56,7 @@
       "key_properties": [
         "id"
       ],
+      "replication_key": "created_at",
       "replication_method": "INCREMENTAL"
     },
     {
@@ -114,6 +115,7 @@
       "key_properties": [
         "id"
       ],
+      "replication_key": "created_at",
       "replication_method": "INCREMENTAL"
     },
     {
@@ -184,6 +186,7 @@
       "key_properties": [
         "id"
       ],
+      "replication_key": "created_at",
       "replication_method": "INCREMENTAL"
     },
     {
@@ -254,6 +257,7 @@
       "key_properties": [
         "id"
       ],
+      "replication_key": "created_at",
       "replication_method": "INCREMENTAL"
     },
     {
@@ -318,6 +322,7 @@
       "key_properties": [
         "id"
       ],
+      "replication_key": "created_at",
       "replication_method": "INCREMENTAL"
     },
     {
@@ -388,6 +393,7 @@
       "key_properties": [
         "id"
       ],
+      "replication_key": "created_at",
       "replication_method": "INCREMENTAL"
     },
     {
@@ -457,6 +463,7 @@
       "key_properties": [
         "id"
       ],
+      "replication_key": "created_at",
       "replication_method": "INCREMENTAL"
     }
   ]

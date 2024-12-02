@@ -12,6 +12,7 @@ class RazorpayClient:
         self.client_id = config['client_id']
         self.client_secret = config['client_secret']
         self.refresh_token = config.get('refresh_token')
+        self.config = {}
         self.access_token = config.get('access_token')
         self.expires_at = config.get('expires_at')
 
@@ -47,6 +48,22 @@ class RazorpayClient:
         self.access_token = token_data["access_token"]
         self.refresh_token = token_data["refresh_token"]
         self.expires_at = time.time() + token_data["expires_in"]
+        
+        # Update the config file with the new refresh token
+        # self._update_config()
+
+    def _update_config(self):
+        if self.config:
+
+            updated_config = self.config.copy()
+            
+            updated_config['refresh_token'] = self.refresh_token
+            updated_config['access_token'] = self.access_token
+            updated_config['expires_at'] = self.expires_at
+
+            self.config = updated_config
+        else:
+            print("Config file path not provided or file not found. Unable to update refresh token.")
 
     def get(self, endpoint, params=None):
         return self._make_request("GET", endpoint, params=params)

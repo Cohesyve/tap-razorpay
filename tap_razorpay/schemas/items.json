@@ -5,7 +5,7 @@
       "description": {"type": ["string", "null"]},
       "amount": {"type": ["integer", "null"]},
       "currency": {"type": ["string", "null"]},
-      "active": {"type": ["boolean"]},
+      "active": {"type": "boolean"},
       "created_at": {"type": ["integer", "null"]}
     },
     "type": "object"
