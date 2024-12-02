@@ -126,11 +126,11 @@ class ItemsStream(Stream):
     tap_stream_id = 'items'
 
 STREAMS = {
-    'orders': OrdersStream,
-    'customers': CustomersStream,
-    'payments': PaymentsStream,
-    'settlements': SettlementsStream,
-    'refunds': RefundsStream,
-    'disputes': DisputesStream,
-    'items': ItemsStream,
+    # 'orders': OrdersStream,
+    'customers': CustomersStream
+    # 'payments': PaymentsStream,
+    # 'settlements': SettlementsStream,
+    # 'refunds': RefundsStream,
+    # 'disputes': DisputesStream,
+    # 'items': ItemsStream,
 }
