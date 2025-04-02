@@ -36,6 +36,12 @@ class RazorpayClient:
             self._refresh_access_token()
 
     def _refresh_access_token(self):
+        
+        print("client_id", self.client_id)
+        print("client_secret", self.client_secret)
+        print("refresh_token", self.refresh_token)
+        print("expires_at", self.expires_at)
+
         data = {
             "client_id": self.client_id,
             "client_secret": self.client_secret,
