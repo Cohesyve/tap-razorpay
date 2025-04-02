@@ -85,6 +85,8 @@ class Stream:
                     singer_transformed_item = transformer.transform(transformed_item, stream_schema, stream_metadata)
                     singer.write_record(self.tap_stream_id, singer_transformed_item)
 
+                    LOGGER.info("Before updating bookmark")
+
                     # Update bookmark if necessary
                     if self.replication_key and self.replication_key in transformed_item:
                         new_bookmark = transformed_item[self.replication_key]
