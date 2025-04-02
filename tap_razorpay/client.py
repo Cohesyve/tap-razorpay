@@ -17,7 +17,8 @@ class RazorpayClient:
         self.refresh_token = config.get('refresh_token')
         self.config = {}
         self.access_token = config.get('access_token')
-        self.expires_at = config.get('expires_at')
+        self.expires_in = config.get('expires_in')
+        self.expires_at = time.time() + config.get('expires_in')
 
     @backoff.on_exception(backoff.expo, requests.exceptions.RequestException, max_tries=5)
     def _make_request(self, method, endpoint, params=None, data=None):
@@ -35,15 +36,17 @@ class RazorpayClient:
         }
 
     def _ensure_access_token(self):
+        LOGGER.info('client_id: %s', self.client_id)
+        LOGGER.info('client_secret: %s', self.client_secret)
+        LOGGER.info('refresh_token: %s', self.refresh_token)
+        LOGGER.info('access_token: %s', self.access_token)
+        LOGGER.info('expires_in: %s', self.expires_in)
+        LOGGER.info('expires_at: %s', self.expires_at)
+
         if not self.access_token or not self.expires_at or time.time() >= self.expires_at:
             self._refresh_access_token()
 
     def _refresh_access_token(self):
-        
-        LOGGER.info('client_id: %s', self.client_id)
-        LOGGER.info('client_secret: %s', self.client_secret)
-        LOGGER.info('refresh_token: %s', self.refresh_token)
-        LOGGER.info('expires_at: %s', self.expires_at)
 
         data = {
             "client_id": self.client_id,
@@ -56,6 +59,7 @@ class RazorpayClient:
         token_data = response.json()
         self.access_token = token_data["access_token"]
         self.refresh_token = token_data["refresh_token"]
+        self.expires_in = token_data["expires_in"]
         self.expires_at = time.time() + token_data["expires_in"]
         
         # Update the config file with the new refresh token
@@ -68,7 +72,7 @@ class RazorpayClient:
             
             updated_config['refresh_token'] = self.refresh_token
             updated_config['access_token'] = self.access_token
-            updated_config['expires_at'] = self.expires_at
+            updated_config['expires_in'] = self.expires_in
 
             self.config = updated_config
         else:
