@@ -74,6 +74,8 @@ class RazorpayClient:
             updated_config['access_token'] = self.access_token
             updated_config['expires_in'] = self.expires_in
 
+            LOGGER.info("Updated config: %s", json.dumps(updated_config, indent=2))
+
             self.config = updated_config
         else:
             print("Config file path not provided or file not found. Unable to update refresh token.")
