@@ -4,6 +4,9 @@ import backoff
 import time
 import json
 import os
+import singer
+
+LOGGER = singer.get_logger()
 
 class RazorpayClient:
     BASE_URL = "https://api.razorpay.com/v1"
@@ -37,10 +40,10 @@ class RazorpayClient:
 
     def _refresh_access_token(self):
         
-        print("client_id", self.client_id)
-        print("client_secret", self.client_secret)
-        print("refresh_token", self.refresh_token)
-        print("expires_at", self.expires_at)
+        LOGGER.info('client_id: %s', self.client_id)
+        LOGGER.info('client_secret: %s', self.client_secret)
+        LOGGER.info('refresh_token: %s', self.refresh_token)
+        LOGGER.info('expires_at: %s', self.expires_at)
 
         data = {
             "client_id": self.client_id,
