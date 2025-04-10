@@ -20,12 +20,6 @@
     "vpa": { "type": ["string", "null"] },
     "email": { "type": ["string", "null"] },
     "contact": { "type": ["string", "null"] },
-    "notes": {
-      "type": ["object", "null"],
-      "properties": {
-        "address": { "type": ["string", "null"] }
-      }
-    },
     "fee": { "type": ["integer", "null"] },
     "tax": { "type": ["integer", "null"] },
     "error_code": { "type": ["string", "null"] },

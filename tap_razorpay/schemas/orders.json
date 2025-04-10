@@ -33,12 +33,6 @@
     "attempts": {
       "type": ["integer", "null"]
     },
-    "notes": {
-      "type": ["array", "null"],
-      "items": {
-        "type": "object"
-      }
-    },
     "created_at": {
       "type": ["integer", "null"]
     }

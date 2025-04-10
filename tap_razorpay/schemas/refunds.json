@@ -6,14 +6,15 @@
     "amount": { "type": ["integer", "null"] },
     "currency": { "type": ["string", "null"] },
     "payment_id": { "type": ["string", "null"] },
-    "notes": {
+    "receipt": { "type": ["string", "null"] },
+    "acquirer_data": { 
       "type": ["object", "null"],
       "properties": {
-        "comment": { "type": ["string", "null"] }
+        "rrn": { "type": ["string", "null"] },
+        "arn": { "type": ["string", "null"] },
+        "utr": { "type": ["string", "null"] }
       }
-    },
-    "receipt": { "type": ["string", "null"] },
-    "acquirer_data": { "type": ["object", "null"] },
+     },
     "created_at": { "type": ["integer", "null"] },
     "batch_id": { "type": ["string", "null"] },
     "status": { "type": ["string", "null"] },

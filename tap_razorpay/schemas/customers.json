@@ -5,7 +5,6 @@
         "email": {"type": ["string", "null"]},
         "contact": {"type": ["string", "null"]},
         "gstin": {"type": ["string", "null"]},
-        "notes": {"type": ["array", "null"], "items": {"type": "string"}},
         "shipping_address": {"type": ["array", "null"], "items": {"type": "object"}},
         "created_at": {"type": ["integer", "null"]}
     },

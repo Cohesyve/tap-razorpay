@@ -77,15 +77,6 @@
                             "null"
                         ]
                     },
-                    "notes": {
-                        "type": [
-                            "array",
-                            "null"
-                        ],
-                        "items": {
-                            "type": "object"
-                        }
-                    },
                     "created_at": {
                         "type": [
                             "integer",
@@ -194,15 +185,6 @@
                 {
                     "breadcrumb": [
                         "properties",
-                        "notes"
-                    ],
-                    "metadata": {
-                        "inclusion": "available"
-                    }
-                },
-                {
-                    "breadcrumb": [
-                        "properties",
                         "created_at"
                     ],
                     "metadata": {
@@ -248,15 +230,6 @@
                             "string",
                             "null"
                         ]
-                    },
-                    "notes": {
-                        "type": [
-                            "array",
-                            "null"
-                        ],
-                        "items": {
-                            "type": "string"
-                        }
                     },
                     "shipping_address": {
                         "type": [
@@ -323,15 +296,6 @@
                     "breadcrumb": [
                         "properties",
                         "gstin"
-                    ],
-                    "metadata": {
-                        "inclusion": "available"
-                    }
-                },
-                {
-                    "breadcrumb": [
-                        "properties",
-                        "notes"
                     ],
                     "metadata": {
                         "inclusion": "available"
@@ -766,20 +730,6 @@
                             "null"
                         ]
                     },
-                    "notes": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "address": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
-                            }
-                        }
-                    },
                     "fee": {
                         "type": [
                             "integer",
@@ -1025,15 +975,6 @@
                 {
                     "breadcrumb": [
                         "properties",
-                        "notes"
-                    ],
-                    "metadata": {
-                        "inclusion": "available"
-                    }
-                },
-                {
-                    "breadcrumb": [
-                        "properties",
                         "fee"
                     ],
                     "metadata": {
@@ -1153,20 +1094,6 @@
                             "null"
                         ]
                     },
-                    "notes": {
-                        "type": [
-                            "object",
-                            "null"
-                        ],
-                        "properties": {
-                            "comment": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ]
-                            }
-                        }
-                    },
                     "receipt": {
                         "type": [
                             "string",
@@ -1177,7 +1104,27 @@
                         "type": [
                             "object",
                             "null"
-                        ]
+                        ],
+                        "properties": {
+                            "rrn": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "arn": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "utr": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            }
+                        }
                     },
                     "created_at": {
                         "type": [
@@ -1258,15 +1205,6 @@
                     "breadcrumb": [
                         "properties",
                         "payment_id"
-                    ],
-                    "metadata": {
-                        "inclusion": "available"
-                    }
-                },
-                {
-                    "breadcrumb": [
-                        "properties",
-                        "notes"
                     ],
                     "metadata": {
                         "inclusion": "available"
