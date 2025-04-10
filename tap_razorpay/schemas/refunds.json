@@ -1,11 +1,23 @@
 {
-    "properties": {
-      "id": {"type": ["string", "null"]},
-      "payment_id": {"type": ["string", "null"]},
-      "amount": {"type": ["integer", "null"]},
-      "status": {"type": ["string", "null"]},
-      "speed_processed": {"type": ["string", "null"]},
-      "created_at": {"type": ["integer", "null"]}
+  "type": "object",
+  "properties": {
+    "id": { "type": ["string", "null"] },
+    "entity": { "type": ["string", "null"] },
+    "amount": { "type": ["integer", "null"] },
+    "currency": { "type": ["string", "null"] },
+    "payment_id": { "type": ["string", "null"] },
+    "notes": {
+      "type": ["object", "null"],
+      "properties": {
+        "comment": { "type": ["string", "null"] }
+      }
     },
-    "type": "object"
+    "receipt": { "type": ["string", "null"] },
+    "acquirer_data": { "type": ["object", "null"] },
+    "created_at": { "type": ["integer", "null"] },
+    "batch_id": { "type": ["string", "null"] },
+    "status": { "type": ["string", "null"] },
+    "speed_processed": { "type": ["string", "null"] },
+    "speed_requested": { "type": ["string", "null"] }
   }
+}

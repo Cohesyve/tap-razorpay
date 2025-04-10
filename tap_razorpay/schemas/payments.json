@@ -1,12 +1,44 @@
 {
-    "properties": {
-      "id": {"type": ["string", "null"]},
-      "amount": {"type": ["integer", "null"]},
-      "currency": {"type": ["string", "null"]},
-      "status": {"type": ["string", "null"]},
-      "order_id": {"type": ["string", "null"]},
-      "method": {"type": ["string", "null"]},
-      "created_at": {"type": ["integer", "null"]}
+  "type": "object",
+  "properties": {
+    "id": { "type": ["string", "null"] },
+    "entity": { "type": ["string", "null"] },
+    "amount": { "type": ["integer", "null"] },
+    "currency": { "type": ["string", "null"] },
+    "status": { "type": ["string", "null"] },
+    "order_id": { "type": ["string", "null"] },
+    "invoice_id": { "type": ["string", "null"] },
+    "international": { "type": ["boolean", "null"] },
+    "method": { "type": ["string", "null"] },
+    "amount_refunded": { "type": ["integer", "null"] },
+    "refund_status": { "type": ["string", "null"] },
+    "captured": { "type": ["boolean", "null"] },
+    "description": { "type": ["string", "null"] },
+    "card_id": { "type": ["string", "null"] },
+    "bank": { "type": ["string", "null"] },
+    "wallet": { "type": ["string", "null"] },
+    "vpa": { "type": ["string", "null"] },
+    "email": { "type": ["string", "null"] },
+    "contact": { "type": ["string", "null"] },
+    "notes": {
+      "type": ["object", "null"],
+      "properties": {
+        "address": { "type": ["string", "null"] }
+      }
     },
-    "type": "object"
+    "fee": { "type": ["integer", "null"] },
+    "tax": { "type": ["integer", "null"] },
+    "error_code": { "type": ["string", "null"] },
+    "error_description": { "type": ["string", "null"] },
+    "error_source": { "type": ["string", "null"] },
+    "error_step": { "type": ["string", "null"] },
+    "error_reason": { "type": ["string", "null"] },
+    "acquirer_data": {
+      "type": ["object", "null"],
+      "properties": {
+        "bank_transaction_id": { "type": ["string", "null"] }
+      }
+    },
+    "created_at": { "type": ["integer", "null"] }
   }
+}

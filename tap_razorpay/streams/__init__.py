@@ -8,16 +8,29 @@
 
 # Razorpay Stream 
 from tap_razorpay.streams.orders import OrdersStream
+from tap_razorpay.streams.customers import CustomersStream
+from tap_razorpay.streams.disputes import DisputesStream
+from tap_razorpay.streams.payments import PaymentsStream
+from tap_razorpay.streams.refunds import RefundsStream
+from tap_razorpay.streams.settlements import SettlementsStream
 
 
 AVAILABLE_STREAMS = [
-    
-    # Sponsored Products
 
-   OrdersStream
+   OrdersStream,
+   CustomersStream,
+   DisputesStream,
+   PaymentsStream,
+   RefundsStream,
+   SettlementsStream
 ]
 
 __all__ = [
-    "OrdersStream"
+    "OrdersStream",
+     "CustomersStream",
+   "DisputesStream",
+   "PaymentsStream",
+   "RefundsStream",
+   "SettlementsStream"
    
 ]

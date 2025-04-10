@@ -1,12 +1,35 @@
 {
-    "properties": {
-      "id": {"type": ["string", "null"]},
-      "payment_id": {"type": ["string", "null"]},
-      "amount": {"type": ["integer", "null"]},
-      "currency": {"type": ["string", "null"]},
-      "status": {"type": ["string", "null"]},
-      "reason": {"type": ["string", "null"]},
-      "created_at": {"type": ["integer", "null"]}
-    },
-    "type": "object"
+  "type": "object",
+  "properties": {
+    "id": { "type": ["string", "null"] },
+    "entity": { "type": ["string", "null"] },
+    "payment_id": { "type": ["string", "null"] },
+    "amount": { "type": ["integer", "null"] },
+    "currency": { "type": ["string", "null"] },
+    "amount_deducted": { "type": ["integer", "null"] },
+    "reason_code": { "type": ["string", "null"] },
+    "respond_by": { "type": ["integer", "null"] },
+    "status": { "type": ["string", "null"] },
+    "phase": { "type": ["string", "null"] },
+    "created_at": { "type": ["integer", "null"] },
+    "evidence": {
+      "type": ["object", "null"],
+      "properties": {
+        "amount": { "type": ["integer", "null"] },
+        "summary": { "type": ["string", "null"] },
+        "shipping_proof": { "type": ["string", "null"] },
+        "billing_proof": { "type": ["string", "null"] },
+        "cancellation_proof": { "type": ["string", "null"] },
+        "customer_communication": { "type": ["string", "null"] },
+        "proof_of_service": { "type": ["string", "null"] },
+        "explanation_letter": { "type": ["string", "null"] },
+        "refund_confirmation": { "type": ["string", "null"] },
+        "access_activity_log": { "type": ["string", "null"] },
+        "refund_cancellation_policy": { "type": ["string", "null"] },
+        "term_and_conditions": { "type": ["string", "null"] },
+        "others": { "type": ["string", "null"] },
+        "submitted_at": { "type": ["integer", "null"] }
+      }
+    }
   }
+}

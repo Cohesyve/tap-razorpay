@@ -6,14 +6,14 @@ import json
 LOGGER = singer.get_logger()  # noqa
 
 
-class OrdersStream(PaginatedStream):
+class PaymentsStream(PaginatedStream):
     API_METHOD = 'GET'
-    TABLE = 'orders'
+    TABLE = 'payments'
     KEY_PROPERTIES = ["id"]
 
     @property
     def api_path(self):
-        return '/orders'
+        return '/payments'
 
     def get_stream_data(self, result):
         return [
