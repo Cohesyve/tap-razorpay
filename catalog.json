@@ -1,468 +1,215 @@
 {
-  "streams": [
-    {
-      "stream": "orders",
-      "tap_stream_id": "orders",
-      "schema": {
-        "properties": {
-          "id": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "amount": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          },
-          "currency": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "status": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "created_at": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          }
-        },
-        "type": "object"
-      },
-      "metadata": [
+    "streams": [
         {
-          "breadcrumb": [],
-          "metadata": {
-            "selected": true,
-            "table-key-properties": [
-              "id"
+            "tap_stream_id": "orders",
+            "stream": "orders",
+            "key_properties": [
+                "id"
             ],
-            "valid-replication-keys": [
-              "created_at"
-            ],
-            "replication-method": "INCREMENTAL"
-          }
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "entity": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "oneof": [
+                            "order"
+                        ]
+                    },
+                    "amount": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
+                    },
+                    "amount_paid": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
+                    },
+                    "amount_due": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
+                    },
+                    "currency": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "receipt": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "offer_id": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "status": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "oneof": [
+                            "created",
+                            "paid",
+                            "attempted"
+                        ]
+                    },
+                    "attempts": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
+                    },
+                    "notes": {
+                        "type": [
+                            "array",
+                            "null"
+                        ],
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "created_at": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
+                    }
+                }
+            },
+            "metadata": [
+                {
+                    "breadcrumb": [],
+                    "metadata": {
+                        "inclusion": "available"
+                    }
+                },
+                {
+                    "breadcrumb": [
+                        "properties",
+                        "id"
+                    ],
+                    "metadata": {
+                        "inclusion": "automatic"
+                    }
+                },
+                {
+                    "breadcrumb": [
+                        "properties",
+                        "entity"
+                    ],
+                    "metadata": {
+                        "inclusion": "available"
+                    }
+                },
+                {
+                    "breadcrumb": [
+                        "properties",
+                        "amount"
+                    ],
+                    "metadata": {
+                        "inclusion": "available"
+                    }
+                },
+                {
+                    "breadcrumb": [
+                        "properties",
+                        "amount_paid"
+                    ],
+                    "metadata": {
+                        "inclusion": "available"
+                    }
+                },
+                {
+                    "breadcrumb": [
+                        "properties",
+                        "amount_due"
+                    ],
+                    "metadata": {
+                        "inclusion": "available"
+                    }
+                },
+                {
+                    "breadcrumb": [
+                        "properties",
+                        "currency"
+                    ],
+                    "metadata": {
+                        "inclusion": "available"
+                    }
+                },
+                {
+                    "breadcrumb": [
+                        "properties",
+                        "receipt"
+                    ],
+                    "metadata": {
+                        "inclusion": "available"
+                    }
+                },
+                {
+                    "breadcrumb": [
+                        "properties",
+                        "offer_id"
+                    ],
+                    "metadata": {
+                        "inclusion": "available"
+                    }
+                },
+                {
+                    "breadcrumb": [
+                        "properties",
+                        "status"
+                    ],
+                    "metadata": {
+                        "inclusion": "available"
+                    }
+                },
+                {
+                    "breadcrumb": [
+                        "properties",
+                        "attempts"
+                    ],
+                    "metadata": {
+                        "inclusion": "available"
+                    }
+                },
+                {
+                    "breadcrumb": [
+                        "properties",
+                        "notes"
+                    ],
+                    "metadata": {
+                        "inclusion": "available"
+                    }
+                },
+                {
+                    "breadcrumb": [
+                        "properties",
+                        "created_at"
+                    ],
+                    "metadata": {
+                        "inclusion": "available"
+                    }
+                }
+            ]
         }
-      ],
-      "key_properties": [
-        "id"
-      ],
-      "replication_key": "created_at",
-      "replication_method": "INCREMENTAL"
-    },
-    {
-      "stream": "customers",
-      "tap_stream_id": "customers",
-      "schema": {
-        "properties": {
-          "id": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "name": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "email": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "contact": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "created_at": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          }
-        },
-        "type": "object"
-      },
-      "metadata": [
-        {
-          "breadcrumb": [],
-          "metadata": {
-            "selected": true,
-            "table-key-properties": [
-              "id"
-            ],
-            "valid-replication-keys": [
-              "created_at"
-            ],
-            "replication-method": "INCREMENTAL"
-          }
-        }
-      ],
-      "key_properties": [
-        "id"
-      ],
-      "replication_key": "created_at",
-      "replication_method": "INCREMENTAL"
-    },
-    {
-      "stream": "payments",
-      "tap_stream_id": "payments",
-      "schema": {
-        "properties": {
-          "id": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "amount": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          },
-          "currency": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "status": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "order_id": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "method": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "created_at": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          }
-        },
-        "type": "object"
-      },
-      "metadata": [
-        {
-          "breadcrumb": [],
-          "metadata": {
-            "selected": true,
-            "table-key-properties": [
-              "id"
-            ],
-            "valid-replication-keys": [
-              "created_at"
-            ],
-            "replication-method": "INCREMENTAL"
-          }
-        }
-      ],
-      "key_properties": [
-        "id"
-      ],
-      "replication_key": "created_at",
-      "replication_method": "INCREMENTAL"
-    },
-    {
-      "stream": "settlements",
-      "tap_stream_id": "settlements",
-      "schema": {
-        "properties": {
-          "id": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "amount": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          },
-          "status": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "fees": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          },
-          "tax": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          },
-          "utr": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "created_at": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          }
-        },
-        "type": "object"
-      },
-      "metadata": [
-        {
-          "breadcrumb": [],
-          "metadata": {
-            "selected": true,
-            "table-key-properties": [
-              "id"
-            ],
-            "valid-replication-keys": [
-              "created_at"
-            ],
-            "replication-method": "INCREMENTAL"
-          }
-        }
-      ],
-      "key_properties": [
-        "id"
-      ],
-      "replication_key": "created_at",
-      "replication_method": "INCREMENTAL"
-    },
-    {
-      "stream": "refunds",
-      "tap_stream_id": "refunds",
-      "schema": {
-        "properties": {
-          "id": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "payment_id": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "amount": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          },
-          "status": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "speed_processed": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "created_at": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          }
-        },
-        "type": "object"
-      },
-      "metadata": [
-        {
-          "breadcrumb": [],
-          "metadata": {
-            "selected": true,
-            "table-key-properties": [
-              "id"
-            ],
-            "valid-replication-keys": [
-              "created_at"
-            ],
-            "replication-method": "INCREMENTAL"
-          }
-        }
-      ],
-      "key_properties": [
-        "id"
-      ],
-      "replication_key": "created_at",
-      "replication_method": "INCREMENTAL"
-    },
-    {
-      "stream": "disputes",
-      "tap_stream_id": "disputes",
-      "schema": {
-        "properties": {
-          "id": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "payment_id": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "amount": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          },
-          "currency": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "status": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "reason": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "created_at": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          }
-        },
-        "type": "object"
-      },
-      "metadata": [
-        {
-          "breadcrumb": [],
-          "metadata": {
-            "selected": true,
-            "table-key-properties": [
-              "id"
-            ],
-            "valid-replication-keys": [
-              "created_at"
-            ],
-            "replication-method": "INCREMENTAL"
-          }
-        }
-      ],
-      "key_properties": [
-        "id"
-      ],
-      "replication_key": "created_at",
-      "replication_method": "INCREMENTAL"
-    },
-    {
-      "stream": "items",
-      "tap_stream_id": "items",
-      "schema": {
-        "properties": {
-          "id": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "name": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "description": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "amount": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          },
-          "currency": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "active": {
-            "type": "boolean"
-          },
-          "created_at": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          }
-        },
-        "type": "object"
-      },
-      "metadata": [
-        {
-          "breadcrumb": [],
-          "metadata": {
-            "selected": true,
-            "table-key-properties": [
-              "id"
-            ],
-            "valid-replication-keys": [
-              "created_at"
-            ],
-            "replication-method": "INCREMENTAL"
-          }
-        }
-      ],
-      "key_properties": [
-        "id"
-      ],
-      "replication_key": "created_at",
-      "replication_method": "INCREMENTAL"
-    }
-  ]
+    ]
 }
