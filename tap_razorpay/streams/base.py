@@ -87,7 +87,7 @@ class PaginatedStream(BaseStream):
 
     def get_paginated_url(self, skip=0, count=100):
         base_url = self.get_url(self.api_path)
-        url = f"{base_url}?skip={skip}?count={count}"
+        url = f"{base_url}?skip={int(skip)}&count={int(count)}"
         return url
 
     def sync_data(self):
