@@ -1,10 +1,10 @@
-from tap_razorpay.streams.base import BaseStream
+from tap_razorpay.streams.base import PaginatedStream
 import singer
 import json
 
 LOGGER = singer.get_logger()  # noqa
 
-class OrdersStream(BaseStream):
+class OrdersStream(PaginatedStream):
     API_METHOD = 'GET'
     TABLE = 'orders'
     KEY_PROPERTIES = ["id"]
