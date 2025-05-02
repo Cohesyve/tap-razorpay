@@ -41,8 +41,6 @@ class BaseStream(base):
 
             if uri is None:
                 api_base_url = DEFAULT_BASE_URL
-            
-
 
         return '{}{}'.format(api_base_url, path)
 
@@ -91,7 +89,6 @@ class PaginatedStream(BaseStream):
         table = self.TABLE
         LOGGER.info('Syncing data for entity {}'.format(table))
 
-        url = self.get_url(self.api_path)
         body = self.get_body()
 
         if self.EXTENDED_BODY_PROPERTIES:
@@ -107,20 +104,26 @@ class PaginatedStream(BaseStream):
 
         page_count = 0
         while True:
+            url = self.get_url(self.api_path, skip=page_count)
+
             LOGGER.info('Syncing from page {}'.format(page_count))
-            result = client.make_request(
-                url, self.API_METHOD, body=body, headers=headers)
-            data = self.get_stream_data(result.json())
-            with singer.metrics.record_counter(endpoint=table) as counter:
-                for obj in data:
-                    singer.write_records(
-                        table,
-                        [obj])
-                    counter.increment()
-            if not hasattr(result, 'next') or result.next is None:
+            try:
+                result = client.make_request(
+                    url, self.API_METHOD, body=body, headers=headers)
+                data = self.get_stream_data(result.json())
+                with singer.metrics.record_counter(endpoint=table) as counter:
+                    for obj in data:
+                        singer.write_records(
+                            table,
+                            [obj])
+                        counter.increment()
+
+                if len(data) < 100:
+                    break
+
+                page_count += 100
+            except Exception as e:
+                LOGGER.error('Error syncing data for entity {}: {}'.format(table, e))
                 break
-            else:
-                url = result.next
-                page_count += 1
         return self.state
 

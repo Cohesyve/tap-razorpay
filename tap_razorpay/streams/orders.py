@@ -1,10 +1,10 @@
-from tap_razorpay.streams.base import PaginatedStream
+from tap_razorpay.streams.base import BaseStream
 import singer
 import json
 
 LOGGER = singer.get_logger()  # noqa
 
-class OrdersStream(PaginatedStream):
+class OrdersStream(BaseStream):
     API_METHOD = 'GET'
     TABLE = 'orders'
     KEY_PROPERTIES = ["id"]
@@ -13,17 +13,9 @@ class OrdersStream(PaginatedStream):
     def api_path(self):
         return '/orders'
 
-    def get_url(self, next_page_token=None):
-        skip_value = next_page_token or 0  
-        url = f"{self.api_path}?skip={skip_value}?count=100"
+    def get_url(self, skip=0, count=100):
+        url = f"{self.api_path}?skip={skip}?count={count}"
         return url
-
-    def get_next_page_token(self, response):
-      
-        if 'items' in response and len(response['items']) > 0:
-           
-            return response['skip'] + 1  
-        return None
 
     def get_stream_data(self, result):
         """
