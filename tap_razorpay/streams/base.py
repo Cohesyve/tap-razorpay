@@ -85,6 +85,10 @@ class BaseStream(base):
 
 class PaginatedStream(BaseStream):
 
+    def get_paginated_url(self, skip=0, count=100):
+        url = f"{self.api_path}?skip={skip}?count={count}"
+        return url
+
     def sync_data(self):
         table = self.TABLE
         LOGGER.info('Syncing data for entity {}'.format(table))
