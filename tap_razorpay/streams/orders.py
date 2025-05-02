@@ -13,7 +13,7 @@ class OrdersStream(PaginatedStream):
     def api_path(self):
         return '/orders'
 
-    def get_url(self, skip=0, count=100):
+    def get_paginated_url(self, skip=0, count=100):
         url = f"{self.api_path}?skip={skip}?count={count}"
         return url
 

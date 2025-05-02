@@ -104,7 +104,7 @@ class PaginatedStream(BaseStream):
 
         page_count = 0
         while True:
-            url = self.get_url(skip=page_count)
+            url = self.get_paginated_url(skip=page_count)
 
             LOGGER.info('Syncing from page {}'.format(page_count))
             try:
